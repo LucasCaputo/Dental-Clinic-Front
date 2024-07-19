@@ -5,6 +5,13 @@ import { PublicRoutesGuard } from './shared/guards/public-routes/public-routes.g
 
 const routes: Routes = [
   {
+    path: 'home',
+    loadComponent: () =>
+      import('./pages/landing-page/landing-page.component').then(
+        (m) => m.LandingPageComponent,
+      ),
+  },
+  {
     path: 'user/token',
     loadComponent: () =>
       import('./pages/email-confirmation/email-confirmation.component').then(
